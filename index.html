@@ -3,50 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./styles.css">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | Contact form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
 <body>
-
-  Contact Us
-
-  First Name
-  This field is required
-
-  Last Name
-  This field is required
-
-  Email Address
-  Please enter a valid email address
-  This field is required
-
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
-
-  Message
-  This field is required
-
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <main>
+    <section class="contact-form__section">
+      <h1 class="contact-form__headline">Contact Us</h1>
+      <form class="contact-form__form">
+        <label class="contact-form__label">
+          <span class="contact-form__label-wrapper">
+            First Name <span class="required">*</span>
+          </span>
+          <input class="contact-form__text" type="text" name="firstName" required>
+        </label>
+        <label class="contact-form__label">
+          <span class="contact-form__label-wrapper">
+            Last Name <span class="required">*</span>
+          </span>
+          <input class="contact-form__text" type="text" name="lastName" required>
+        </label>
+        <label class="contact-form__label contact-form__email-label">
+          <span class="contact-form__label-wrapper">
+            Email Address <span class="required">*</span>
+          </span>
+          <input class="contact-form__email" type="email" name="email" required>
+        </label>
+        <label class="contact-form__label">
+          <span class="contact-form__label-wrapper">
+            Query Type <span class="required">*</span>
+          </span>
+          <div class="contact-form__radio-label-group">
+            <label class="contact-form__radio-label">
+              <input class="contact-form__radio"type="radio" name="queryType" value="General Enquiry">
+              General Enquiry
+            </label>
+            <label class="contact-form__radio-label">
+              <input class="contact-form__radio"type="radio" name="queryType" value="Support Request">
+              Support Request
+            </label>
+          </div>
+        </label>
+        <label class="contact-form__label contact-form__textarea-label">
+          <span class="contact-form__label-wrapper">
+            <span>
+              Message <span class="required">*</span>
+            </span>
+          </span>
+          <textarea class="contact-form__textarea" name="message" required></textarea>
+        </label>
+        <label class="contact-form__label contact-form__checkbox-label">
+          <input class="contact-form__checkbox" type="checkbox" name="consent" required>
+          <span class="contact-form__label-wrapper">
+            I consent to being contacted by the team Query Type <span class="required">*</span>
+          </span>
+        </label>
+        <button class="contact-form__submit-btn" type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
 </body>
 </html>
