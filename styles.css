@@ -170,6 +170,7 @@ input, textarea {
 /* Error state */
 .error {
   color: var(--red);
+  display: none;
   font-size: 0.875rem;
   margin-top: 0.25rem;
 }
