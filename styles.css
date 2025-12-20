@@ -1,0 +1,215 @@
+@font-face {
+  font-family: 'Karla';
+  src: url('./assets/fonts/Karla-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 800;
+}
+
+@font-face {
+  font-family: 'Karla';
+  src: url('./assets/fonts/Karla-Italic-VariableFont_wght.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 200 800;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+body {
+  font-size: 16px;
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6, label, input, ol, ul, li, span, button {
+  font-family: "Karla", sans-serif;
+  overflow-wrap: break-word;
+}
+/* 9. Improve line wrapping */
+p {
+  font-weight: 400;
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+:root {
+  --green-200: hsl(148, 38%, 91%);
+  --green-600: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 54%);
+  --white: hsl(0, 0%, 100%);
+  --grey-500: hsl(186, 15%, 59%);
+  --grey-900: hsl(187, 24%, 22%);
+}
+
+main {
+  align-items: center;
+  background: var(--green-200);
+  padding: 1rem;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form__section {
+  background: var(--white);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 48rem;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.contact-form__headline {
+  margin-block-end: 1rem;
+}
+
+.contact-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-form__label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  line-height: normal;
+  width: 100%;
+}
+
+.contact-form__text:is(:active, :focus, :focus-visible), .contact-form__email:is(:active, :focus, :focus-visible), .contact-form__textarea:is(:active, :focus, :focus-visible) {
+  outline: 1px solid var(--green-600);
+}
+
+.contact-form__text:hover, .contact-form__email:hover {
+  outline: 1px solid var(--green-600);
+}
+
+.contact-form__radio-label:has(.contact-form__radio:checked) {
+  background-color: var(--green-200);
+  outline: 1px solid var(--green-600);
+}
+
+.contact-form__radio:is(:checked, [checked="true"]), .contact-form__radio:is(:checked, [checked="true"]):hover {
+  accent-color: var(--green-600);
+}
+
+.contact-form__checkbox:is(:checked, [checked="true"]), .contact-form__checkbox:is(:checked, [checked="true"]):hover {
+  accent-color: var(--green-600);
+}
+
+.contact-form__radio-label-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.contact-form__label .required {
+  color: var(--green-600);
+}
+
+.contact-form__radio-label {
+  border: 1px solid var(--grey-500);
+  border-radius: 0.5rem;
+  flex-basis: 100%;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+}
+
+input, textarea {
+  border: 1px solid var(--grey-500);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.contact-form__text, .contact-form__email, .contact-form__radio-label, .contact-form__radio, .contact-form__checkbox-label, .contact-form__checkbox {
+  cursor: pointer;
+}
+
+.contact-form__input-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-form__submit-btn {
+  background: var(--green-600);
+  border: 1px solid var(--green-600);
+  border-radius: 0.5rem;
+  color: var(--white);
+  cursor: pointer;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+/* Error state */
+.error {
+  color: var(--red);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+@media only screen and (min-width: 48rem) {
+  .contact-form__section {
+    padding: 2rem;
+  }
+
+  .contact-form__form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .contact-form__headline {
+    flex-basis: 100%;
+  }
+
+  .contact-form__radio-label-group {
+    gap: 1.5rem;
+  }
+
+  .contact-form__radio-label-group > * {
+    flex-basis: calc(50% - 1rem);
+  }
+
+  .contact-form__label:is(:nth-child(1), :nth-child(2)) {
+    flex-basis: calc(50% - 1rem);
+  }
+
+  .contact-form__email-label, .contact-form__textarea-label {
+    flex-basis: 100%;
+  }
+
+  input, textarea {
+    padding: 0.75rem;
+  }
+
+  .contact-form__radio-label {
+    padding: 0.75rem 0.75rem 0.75rem 1.25rem;
+  }
+}
