@@ -168,11 +168,23 @@ input, textarea {
 }
 
 /* Error state */
-.error {
+.errorMsg {
   color: var(--red);
   display: none;
   font-size: 0.875rem;
   margin-top: 0.25rem;
+}
+
+.contact-form__label.error input:is([type="text"], [type="email"]) {
+  outline: 1px solid var(--red);
+}
+
+.contact-form__label.error textarea {
+  border-color: var(--red);
+}
+
+.contact-form__label.error .errorMsg {
+  display: block;
 }
 
 @media only screen and (min-width: 48rem) {

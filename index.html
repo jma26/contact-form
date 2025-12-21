@@ -16,61 +16,61 @@
     <section class="contact-form__section">
       <h1 class="contact-form__headline">Contact Us</h1>
       <form class="contact-form__form">
-        <label class="contact-form__label">
+        <label class="contact-form__label contact-form__firstname-label">
           <span class="contact-form__label-wrapper">
             First Name <span class="required">*</span>
           </span>
-          <input class="contact-form__text" type="text" name="firstName" aria-describedBy="firstNameError" required>
-          <span class="error" id="firstNameError">This field is required</span>
+          <input class="contact-form__text" type="text" name="firstName" aria-describedBy="firstNameError">
+          <span class="errorMsg" id="firstNameError">This field is required</span>
         </label>
-        <label class="contact-form__label">
+        <label class="contact-form__label contact-form__lastname-label">
           <span class="contact-form__label-wrapper">
             Last Name <span class="required">*</span>
           </span>
-          <input class="contact-form__text" type="text" name="lastName" aria-describedBy="lastnameError" required>
-          <span class="error" id="lastNameError">This field is required</span>
+          <input class="contact-form__text" type="text" name="lastName" aria-describedBy="lastnameError">
+          <span class="errorMsg" id="lastNameError">This field is required</span>
         </label>
         <label class="contact-form__label contact-form__email-label">
           <span class="contact-form__label-wrapper">
             Email Address <span class="required">*</span>
           </span>
-          <input class="contact-form__email" type="email" name="email" aria-describedBy="emailError" required>
-          <span class="error" id="emailError">Please enter a valid email address</span>
+          <input class="contact-form__email" type="email" name="email" aria-describedBy="emailError">
+          <span class="errorMsg" id="emailError">Please enter a valid email address</span>
         </label>
-        <label class="contact-form__label">
+        <label class="contact-form__label contact-form__querytype-label">
           <span class="contact-form__label-wrapper">
             Query Type <span class="required">*</span>
           </span>
           <div class="contact-form__radio-label-group">
             <label class="contact-form__radio-label">
-              <input class="contact-form__radio"type="radio" name="queryType" value="General Enquiry" aria-describedby="queryTypeError" required>
+              <input class="contact-form__radio"type="radio" name="queryType" value="General Enquiry" aria-describedby="queryTypeError" >
               General Enquiry
             </label>
             <label class="contact-form__radio-label">
-              <input class="contact-form__radio"type="radio" name="queryType" value="Support Request" aria-describedby="queryTypeError" required>
+              <input class="contact-form__radio"type="radio" name="queryType" value="Support Request" aria-describedby="queryTypeError">
               Support Request
             </label>
           </div>
-          <span class="error" id="queryTypeError">Please select a query type</span>
+          <span class="errorMsg" id="queryTypeError">Please select a query type</span>
         </label>
-        <label class="contact-form__label contact-form__textarea-label">
+        <label class="contact-form__label contact-form__message-label">
           <span class="contact-form__label-wrapper">
             <span>
               Message <span class="required">*</span>
             </span>
           </span>
-          <textarea class="contact-form__textarea" name="message" aria-describedby="textareaError" required></textarea>
-          <span class="error" id="textareaError">This field is required</span>
+          <textarea class="contact-form__textarea" name="message" aria-describedby="textareaError"></textarea>
+          <span class="errorMsg" id="textareaError">This field is required</span>
         </label>
         <label class="contact-form__label contact-form__checkbox-label">
           <div class="contact-form__input-wrapper">
-            <input class="contact-form__checkbox" type="checkbox" name="consent" aria-describedby="checkboxError" required>
+            <input class="contact-form__checkbox" type="checkbox" name="consent" aria-describedby="checkboxError">
             <span class="contact-form__label-wrapper">
               I consent to being contacted by the team
               <span class="required">*</span>
             </span>
           </div>
-          <span class="error" id="checkboxError">To submit this form, please consent to being contacted</span>
+          <span class="errorMsg" id="checkboxError">To submit this form, please consent to being contacted</span>
         </label>
         <button class="contact-form__submit-btn" type="submit">Submit</button>
       </form>
