@@ -1,4 +1,6 @@
+const sectionEl = document.querySelector('.contact-form__section');
 const form = document.querySelector('.contact-form__form');
+const modal = document.querySelector('#messageSentModal');
 
 const fieldLabels = {
   consent: document.querySelector('.contact-form__checkbox-label'),
@@ -19,10 +21,24 @@ form.addEventListener('submit', function(event) {
   }
 
   if (isFormValid(formDataObj)) {
-    console.log('Successful form submission');
-    form.submit();
+    form.reset();
+
+    // Calculate height of form to consistently place modal slightly on top of it
+    modal.show();
+    const sectionRect = sectionEl.getBoundingClientRect();
+    modal.style.top = `${sectionRect.top - modal.offsetHeight + 10}px`;
+    modal.style.opacity = 1;
+    autoCloseDialog(modal, 5000);
   }
 });
+
+function autoCloseDialog(dialog, delay = 5000) {
+  setTimeout(() => {
+    dialog.style.top = '-100%';
+    dialog.style.opacity = 0;
+    dialog.close();
+  }, delay);
+}
 
 function isFormValid({ consent, email, firstName, lastName, message, queryType}) {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -47,10 +63,11 @@ function isFormValid({ consent, email, firstName, lastName, message, queryType})
     errors.queryType = true;
   }
   
+  displayErrors(errors);
+
   if (Object.keys(errors).length === 0) {
     return true;
   } else {
-    displayErrors(errors);
     return false;
   }
 }
