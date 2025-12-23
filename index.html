@@ -45,22 +45,20 @@
           <input class="contact-form__email" type="email" name="email" aria-describedBy="emailError">
           <span class="errorMsg" id="emailError">Please enter a valid email address</span>
         </label>
-        <label class="contact-form__label contact-form__querytype-label">
-          <span class="contact-form__label-wrapper">
-            Query Type <span class="required">*</span>
-          </span>
+        <fieldset class="contact-form__fieldset" aria-describedby="queryTypeError">
+          <legend class="contact-form__legend">Query Type <span class="required">*</span></legend>
           <div class="contact-form__radio-label-group">
             <label class="contact-form__radio-label">
-              <input class="contact-form__radio"type="radio" name="queryType" value="General Enquiry" aria-describedby="queryTypeError" >
+              <input class="contact-form__radio"type="radio" name="queryType" value="General Enquiry" >
               General Enquiry
             </label>
             <label class="contact-form__radio-label">
-              <input class="contact-form__radio"type="radio" name="queryType" value="Support Request" aria-describedby="queryTypeError">
+              <input class="contact-form__radio"type="radio" name="queryType" value="Support Request">
               Support Request
             </label>
           </div>
           <span class="errorMsg" id="queryTypeError">Please select a query type</span>
-        </label>
+        </fieldset>
         <label class="contact-form__label contact-form__message-label">
           <span class="contact-form__label-wrapper">
             <span>
@@ -71,13 +69,13 @@
           <span class="errorMsg" id="textareaError">This field is required</span>
         </label>
         <label class="contact-form__label contact-form__checkbox-label">
-          <div class="contact-form__input-wrapper">
+          <span class="contact-form__input-wrapper">
             <input class="contact-form__checkbox" type="checkbox" name="consent" aria-describedby="checkboxError">
             <span class="contact-form__label-wrapper">
               I consent to being contacted by the team
               <span class="required">*</span>
             </span>
-          </div>
+          </span>
           <span class="errorMsg" id="checkboxError">To submit this form, please consent to being contacted</span>
         </label>
         <button class="contact-form__submit-btn" type="submit">Submit</button>

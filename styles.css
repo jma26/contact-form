@@ -42,7 +42,7 @@ input, button, textarea, select {
   font: inherit;
 }
 /* 8. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6, label, input, ol, ul, li, span, button {
+p, h1, h2, h3, h4, h5, h6, label, input, ol, ul, li, span, button, fieldset, legend {
   font-family: "Karla", sans-serif;
   overflow-wrap: break-word;
 }
@@ -165,6 +165,20 @@ input, textarea {
   cursor: pointer;
   padding: 0.5rem;
   width: 100%;
+}
+
+.contact-form__fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  width: 100%;
+}
+
+.contact-form__legend {
+  display: block;
+  margin: 0 0 0.5rem 0;
+  padding: 0;
 }
 
 /* Error state */
